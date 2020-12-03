@@ -1,0 +1,46 @@
+.listtasks {
+  border-right: 2px solid #62dafc;
+  width: 300px;
+  padding: 20px 20px;
+  font-size: 18px;
+
+  &_add {
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  ul {
+    overflow: auto;
+    max-height: 450px;
+    li {
+      margin-bottom: 10px;
+      padding: 8px 10px;
+      transition: background-color 0.1s ease-in-out;
+      border-radius: 10px;
+      width: 95%;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      &.active {
+        background: #62dafc;
+        color: #20232a;
+      }
+      span {
+        position: relative;
+        top: 2px;
+        &:hover {
+          path {
+            transition: fill 0.1s ease-in-out;
+            fill: #20232a;
+          }
+        }
+      }
+
+      &:hover {
+        background: #62dafc;
+        color: #20232a;
+      }
+    }
+  }
+}

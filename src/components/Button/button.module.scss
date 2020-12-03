@@ -1,0 +1,29 @@
+.button {
+  padding: 7px 10px;
+  width: 100px;
+  border-radius: 10px;
+  background: #3adf55;
+  font-family: 'Montserrat', sans-serif;
+  transition: background-color 0.1s ease-in-out;
+  &:hover {
+    background: darken(#3adf55, 7%);
+  }
+  &:active {
+    background: darken(#3adf55, 12%);
+  }
+  &.lists {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  &.danger {
+    background: #cc362b;
+    margin-left: 10px;
+    &:hover {
+      background: darken(#cc362b, 7%);
+    }
+    &:active {
+      background: darken(#cc362b, 12%);
+    }
+  }
+}

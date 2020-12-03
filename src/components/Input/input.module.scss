@@ -1,0 +1,27 @@
+.input {
+  input {
+    cursor: pointer;
+    background: #62dafc;
+    width: 200px;
+    color: black;
+    padding: 7px 15px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+    transition: background-color 0.1s ease-in-out;
+    &.liststyle {
+      width: 100%;
+      font-size: 16px;
+    }
+    &.taskstyle {
+      width: 210px;
+      font-size: 16px;
+    }
+    &:hover {
+      background: lighten(#62dafc, 10%);
+    }
+    &:focus {
+      background-color: white;
+      cursor: auto;
+    }
+  }
+}

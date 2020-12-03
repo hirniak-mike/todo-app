@@ -1,0 +1,97 @@
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  border: none;
+  outline: none;
+}
+
+button {
+  font-family: Lato, sans-serif;
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    outline: none;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+a {
+  font-style: normal;
+  text-decoration: none;
+
+  &:active {
+    color: inherit;
+  }
+
+  &:link {
+    color: inherit;
+  }
+
+  &:visited {
+    color: inherit;
+  }
+}

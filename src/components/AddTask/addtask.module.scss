@@ -1,0 +1,26 @@
+.addtask {
+  &_open {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    button {
+      font-size: 18px;
+      margin-left: 5px;
+      color: #62dafc;
+      cursor: pointer;
+    }
+    &:hover {
+      path {
+        stroke: white;
+      }
+      button {
+        color: white;
+      }
+    }
+  }
+  &_form {
+    &_wrapper {
+      display: flex;
+    }
+  }
+}

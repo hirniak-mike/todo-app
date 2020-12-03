@@ -1,0 +1,11 @@
+.header {
+  padding: 15px 60px;
+  border-bottom: 2px solid #62dafc;
+  display: flex;
+  justify-content: flex-start;
+  &_title {
+    font-size: 26px;
+    font-family: 'Fredoka One', cursive;
+    margin-right: 120px;
+  }
+}
