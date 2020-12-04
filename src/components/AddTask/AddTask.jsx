@@ -46,7 +46,7 @@ const AddTask = () => {
           <Input placeholder="Enter task" taskstyle />
           <div className={s.addtask_form_wrapper}>
             <Button name="Add" />
-            <Button name="Cancel" danger toogleFormVisible={toogleFormVisible} />
+            <Button name="Cancel" onClick={toogleFormVisible} danger />
           </div>
         </div>
       )}

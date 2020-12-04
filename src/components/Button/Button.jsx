@@ -4,15 +4,15 @@ import classNames from 'classnames';
 
 import s from './button.module.scss';
 
-const Button = ({ name, lists, danger, toogleFormVisible }) => {
+const Button = ({ name, liststyle, danger, onClick, isLoading }) => {
   return (
     <div>
       <button
         type="button"
-        onClick={toogleFormVisible}
-        className={classNames(s.button, { [s.lists]: lists, [s.danger]: danger })}
+        onClick={onClick}
+        className={classNames(s.button, { [s.liststyle]: liststyle, [s.danger]: danger })}
       >
-        {name}
+        {isLoading ? 'Loading...' : `${name}`}
       </button>
     </div>
   );
@@ -20,9 +20,10 @@ const Button = ({ name, lists, danger, toogleFormVisible }) => {
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
-  lists: PropTypes.bool.isRequired,
+  liststyle: PropTypes.bool.isRequired,
   danger: PropTypes.bool.isRequired,
-  toogleFormVisible: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
 };
 
 export default Button;

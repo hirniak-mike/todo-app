@@ -1,14 +1,15 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import s from './task.module.scss';
 
-const Task = () => {
+const Task = ({ text, itemId }) => {
   return (
     <div className={s.task}>
       <div className={s.checkbox}>
-        <input id="taskid" type="checkbox" />
-        <label htmlFor="taskid">
+        <input id={`task-${itemId}`} type="checkbox" />
+        <label htmlFor={`task-${itemId}`}>
           <svg
             width="15"
             height="10"
@@ -25,7 +26,7 @@ const Task = () => {
             />
           </svg>
         </label>
-        <p>Learn React Redux</p>
+        <p>{text}</p>
       </div>
       <div className={s.task_edit}>
         <span>
@@ -59,6 +60,11 @@ const Task = () => {
       </div>
     </div>
   );
+};
+
+Task.propTypes = {
+  text: PropTypes.string.isRequired,
+  itemId: PropTypes.number.isRequired,
 };
 
 export default Task;

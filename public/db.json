@@ -2,74 +2,77 @@
   "todo": [
     {
       "id": 0,
-      "title": "Education",
-      "tasks": [
-        {
-          "id": 0,
-          "text": "Learn React Redux", 
-          "completed": true
-        },
-        {
-          "id": 1,
-          "text": "Learn English", 
-          "completed": false
-        }
-      ]
+      "title": "Education"
     },
     {
-        "id": 1,
-        "title": "Movies",
-        "tasks": [
-          {
-            "id": 0,
-            "text": "Idiocraty", 
-            "completed": true
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Hobby",
-        "tasks": [
-          {
-            "id": 0,
-            "text": "Procrastination", 
-            "completed": true
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "title": "Sport",
-        "tasks": [
-          {
-            "id": 0,
-            "text": "Play FIFA", 
-            "completed": false
-          }
-        ]
-      },
-      {
-        "id": 4,
-        "title": "Buy",
-        "tasks": [
-          {
-            "id": 0,
-            "text": "Bread", 
-            "completed": false
-          }
-        ]
-      },
-      {
-        "id": 5,
-        "title": "Other",
-        "tasks": [
-          {
-            "id": 0,
-            "text": "Don`t dead", 
-            "completed": true
-          }
-        ]
-      }
+      "id": 1,
+      "title": "Movies"
+    },
+    {
+      "id": 2,
+      "title": "Hobby"
+    },
+    {
+      "id": 3,
+      "title": "Sport"
+    },
+    {
+      "id": 4,
+      "title": "Buy"
+    },
+    {
+      "id": 5,
+      "title": "Other"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 0,
+      "todoId": 0,
+      "text": "Learn React Redux",
+      "completed": true
+    },
+    {
+      "id": 1,
+      "todoId": 0,
+      "text": "Learn English",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "todoId": 1,
+      "text": "Idiocraty",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "todoId": 1,
+      "text": "Idiocraty",
+      "completed": true
+    },
+    {
+      "id": 4,
+      "todoId": 1,
+      "text": "Idiocraty",
+      "completed": true
+    },
+    {
+      "id": 5,
+      "todoId": 2,
+      "text": "Procrastination",
+      "completed": true
+    },
+    {
+      "id": 6,
+      "todoId": 3,
+      "text": "Play FIFA",
+      "completed": false
+    },
+    {
+      "id": 7,
+      "todoId": 5,
+      "text": "Others",
+      "completed": true
+    }
   ]
 }

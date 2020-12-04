@@ -1,24 +1,57 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
+import axios from 'axios';
+import { setTasks } from '../../redux/actions/setTasks';
 
 import { Input, Button } from '..';
 
 import s from './listtasks.module.scss';
 
 const ListTasks = () => {
+  const [valueTitle, setValueTitle] = useState('');
+  const [activeItem, setActiveItem] = useState(null);
+  const [isLoadingTitle, setIsLoadingTitle] = useState(false);
+
+  const dispatch = useDispatch();
+
   const { items } = useSelector(({ todoItems }) => {
     return {
       items: todoItems.items,
     };
   });
 
-  const [activeItem, setActiveItem] = useState(null);
-
-  const onClickActive = (index) => {
+  const onClickActive = (item, index) => {
     setActiveItem(index);
+    dispatch(setTasks(item));
+  };
+
+  const addTitle = () => {
+    if (!valueTitle) {
+      // eslint-disable-next-line no-alert
+      alert('Enter task title');
+      return;
+    }
+    setIsLoadingTitle(true);
+    axios
+      .post('http://localhost:3001/todo', {
+        title: valueTitle,
+        tasks: [],
+      })
+      .finally(() => {
+        setIsLoadingTitle(false);
+        setValueTitle('');
+      });
+  };
+
+  const removeTitle = (item) => {
+    // eslint-disable-next-line no-alert
+    if (window.confirm('Do you really want to delete?')) {
+      axios.delete(`http://localhost:3001/todo/${item.id}`);
+    }
   };
 
   return (
@@ -27,11 +60,11 @@ const ListTasks = () => {
         {items.map((item, index) => (
           <li
             key={item.id}
-            onClick={() => onClickActive(index)}
+            onClick={() => onClickActive(item, index)}
             className={classNames({ [s.active]: activeItem === index })}
           >
             {item.title}
-            <span>
+            <span onClick={() => removeTitle(item)}>
               <svg
                 width="20"
                 height="20"
@@ -51,8 +84,13 @@ const ListTasks = () => {
         ))}
       </ul>
       <div className={s.listtasks_add}>
-        <Input placeholder="Enter title" liststyle />
-        <Button name="Add" lists />
+        <Input
+          placeholder="Enter title"
+          liststyle
+          valueTitle={valueTitle}
+          setValueTitle={setValueTitle}
+        />
+        <Button name="Add" onClick={addTitle} isLoading={isLoadingTitle} liststyle />
       </div>
     </div>
   );
