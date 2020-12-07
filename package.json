@@ -14,6 +14,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
@@ -25,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "fakeserver": "json-server ./public/db.json --watch --port 3001"
+    "fakeserver": "json-server ./src/res/server/db.json --watch --port 3001"
   },
   "browserslist": {
     "production": [

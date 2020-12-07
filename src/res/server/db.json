@@ -1,0 +1,60 @@
+{
+  "todo": [
+    {
+      "id": 0,
+      "title": "Education"
+    },
+    {
+      "id": 1,
+      "title": "Movies"
+    },
+    {
+      "id": 2,
+      "title": "Hobby"
+    },
+    {
+      "id": 3,
+      "title": "Sport"
+    },
+    {
+      "id": 4,
+      "title": "Buy"
+    },
+    {
+      "id": 5,
+      "title": "Other"
+    }
+  ],
+  "tasks": [
+    {
+      "text": "Learn Redux",
+      "todoId": 0,
+      "completed": true,
+      "id": 24
+    },
+    {
+      "text": "Learn React",
+      "todoId": 0,
+      "completed": true,
+      "id": 25
+    },
+    {
+      "text": "ddddd",
+      "todoId": 4,
+      "completed": false,
+      "id": 28
+    },
+    {
+      "text": "Play FIFA",
+      "todoId": 3,
+      "completed": true,
+      "id": 30
+    },
+    {
+      "text": "fdsvdsfz",
+      "todoId": 1,
+      "completed": true,
+      "id": 31
+    }
+  ]
+}
