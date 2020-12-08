@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Input, Button } from '..';
-import { addTask } from '../../redux/actions/setTasksItem';
+import { addTask } from '../../redux/actions/tasksActions';
 
 import s from './index.module.scss';
 

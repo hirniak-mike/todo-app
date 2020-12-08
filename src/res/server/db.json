@@ -35,7 +35,7 @@
     {
       "text": "Learn React",
       "todoId": 0,
-      "completed": true,
+      "completed": false,
       "id": 25
     },
     {
@@ -49,6 +49,42 @@
       "todoId": 3,
       "completed": true,
       "id": 30
+    },
+    {
+      "text": "fdgvfdzx",
+      "todoId": 7,
+      "completed": true,
+      "id": 31
+    },
+    {
+      "text": "dfdssd",
+      "todoId": 7,
+      "completed": true,
+      "id": 32
+    },
+    {
+      "text": "fdsfddsfgsd",
+      "todoId": 8,
+      "completed": true,
+      "id": 33
+    },
+    {
+      "text": "gdsgdf",
+      "todoId": 9,
+      "completed": false,
+      "id": 34
+    },
+    {
+      "text": "fsdsfds",
+      "todoId": 10,
+      "completed": true,
+      "id": 35
+    },
+    {
+      "text": "авіапмвіа",
+      "todoId": 6,
+      "completed": true,
+      "id": 36
     }
   ]
 }

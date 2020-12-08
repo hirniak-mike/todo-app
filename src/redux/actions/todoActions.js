@@ -38,10 +38,10 @@ const deleteTodoSuccess = (items) => ({
   payload: items,
 });
 
-export const deleteTodo = (item) => {
+export const deleteTodo = (id, index) => {
   return (dispatch) => {
-    axios.delete(`${BASE_SERVER_TODO}/${item}`).then(() => {
-      dispatch(deleteTodoSuccess(item));
+    axios.delete(`${BASE_SERVER_TODO}/${id}`).then(() => {
+      dispatch(deleteTodoSuccess(index));
     });
   };
 };

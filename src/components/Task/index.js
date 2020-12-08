@@ -39,7 +39,7 @@ const Task = ({ text, itemId, listId, arrId, onClick, onCheckedTask, completed }
         <p>{text}</p>
       </div>
       <div className={s.task_edit}>
-        {/* <span>
+        {/* <span> Will be in another version soon
           <svg
             width="14"
             height="14"

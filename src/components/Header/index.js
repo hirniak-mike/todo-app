@@ -18,7 +18,7 @@ const Header = () => {
       <div className={s.header_title}>
         <h1 onClick={handleClick}>ToDo App</h1>
       </div>
-      {/* <Input placeholder="Search" /> */}
+      {/* <Input placeholder="Search" /> Will be in another version soon */}
     </div>
   );
 };

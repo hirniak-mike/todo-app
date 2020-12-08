@@ -5,14 +5,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { AddTask, Task } from '..';
-import { removeTask, checkedTask } from '../../redux/actions/setTasksItem';
+import { removeTask, checkedTask } from '../../redux/actions/tasksActions';
 
 import s from './index.module.scss';
 
 const TaskItem = () => {
-  const { tasksList } = useSelector(({ todoItems }) => {
+  const { tasksList } = useSelector(({ todoReducer }) => {
     return {
-      tasksList: todoItems.items,
+      tasksList: todoReducer.items,
     };
   });
   const dispatch = useDispatch();
@@ -30,13 +30,14 @@ const TaskItem = () => {
   const { id } = useParams();
   return (
     <div className={s.tasks}>
-      {tasksList[+id] === undefined
+      {/* [taskItem.[+id]] === undefinded */}
+      {id === undefined
         ? tasksList.map((item) => (
             <div key={item.id}>
               <div className={s.tasks_title}>
                 <h1>
                   {item.title}
-                  {/* <span>
+                  {/* <span> Will be in another version soon
                     <svg
                       width="15"
                       height="15"
@@ -70,12 +71,12 @@ const TaskItem = () => {
               <AddTask id={item.id} />
             </div>
           ))
-        : [tasksList[+id]].map((item) => (
+        : [tasksList.find((list) => list.id === +id)].map((item) => (
             <div key={item.id}>
               <div className={s.tasks_title}>
                 <h1>
                   {item.title}
-                  {/* <span>
+                  {/* <span> Will be in another version soon
                     <svg
                       width="15"
                       height="15"

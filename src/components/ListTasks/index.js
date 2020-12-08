@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 
-import { addTodo, deleteTodo } from '../../redux/actions/setTodoItems';
+import { addTodo, deleteTodo } from '../../redux/actions/todoActions';
 import { Input, Button } from '..';
 
 import s from './index.module.scss';
@@ -16,13 +16,14 @@ const ListTasks = () => {
   const [activeItem, setActiveItem] = useState(null);
   const [isLoadingTitle, setIsLoadingTitle] = useState(false);
 
-  const { items } = useSelector(({ todoItems }) => {
+  const { items } = useSelector(({ todoReducer }) => {
     return {
-      items: todoItems.items,
+      items: todoReducer.items,
     };
   });
 
   const { id } = useParams();
+  const history = useHistory();
 
   const dispatch = useDispatch();
 
@@ -41,10 +42,14 @@ const ListTasks = () => {
     setIsLoadingTitle(false);
   };
 
-  const removeTitle = (item) => {
+  // eslint-disable-next-line no-shadow
+  const removeTitle = (idList, indexList) => {
     // eslint-disable-next-line no-alert
     if (window.confirm('Do you really want to delete?')) {
-      dispatch(deleteTodo(item));
+      dispatch(deleteTodo(idList, indexList));
+      if (idList === +id) {
+        history.push('/');
+      }
     }
   };
 
@@ -55,12 +60,12 @@ const ListTasks = () => {
           items.map((item, index) => (
             <li
               key={item.id}
-              className={classNames({ [s.active]: activeItem === index || +id === index })}
+              className={classNames({ [s.active]: activeItem === item.id || +id === item.id })}
             >
-              <Link to={`/${item.id}`} onClick={() => onClickActive(index)}>
+              <Link to={`/${item.id}`} onClick={() => onClickActive(item.id)}>
                 {item.title}
               </Link>
-              <span onClick={() => removeTitle(item.id)}>
+              <span onClick={() => removeTitle(item.id, index)}>
                 <svg
                   width="20"
                   height="20"
