@@ -3,22 +3,23 @@
   &_open {
     display: flex;
     align-items: center;
-    cursor: pointer;
     button {
       font-size: 18px;
       margin-left: 5px;
       color: #62dafc;
       cursor: pointer;
-    }
-    &:hover {
-      path {
-        stroke: white;
+      svg {
+        margin-right: 10px;
       }
-      button {
+      &:hover {
         color: white;
+        path {
+          stroke: white;
+        }
       }
     }
   }
+  
   &_form {
     &_wrapper {
       display: flex;
