@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { BASE_SERVER_TASKS } from '../../res/api/BasicApi';
+import { BASE_SERVER_TASKS } from '../../res/const/api_const';
 
 export const setTasks = (items) => ({
   type: 'SET_TODO_TASKS',
@@ -49,5 +49,22 @@ export const checkedTask = (id, index, completed, listId) => {
     axios.patch(`${BASE_SERVER_TASKS}/${id}`, { completed }).then(() => {
       dispatch(checkedTaskSuccess({ index, listId }));
     });
+  };
+};
+
+const editTaskSuccess = (items) => ({
+  type: 'EDIT_TASKS_SUCCESS',
+  payload: items,
+});
+
+export const editTask = (newText, itemId, listId, arrId) => {
+  return (dispatch) => {
+    axios
+      .patch(`${BASE_SERVER_TASKS}/${itemId}`, {
+        text: newText,
+      })
+      .then(() => {
+        dispatch(editTaskSuccess({ newText, listId, arrId }));
+      });
   };
 };

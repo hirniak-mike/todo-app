@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -5,11 +6,11 @@ import classNames from 'classnames';
 
 import s from './index.module.scss';
 
-const Button = ({ name, onClick, liststyle, danger, isLoading }) => {
+const Button = ({ name, onClick, liststyle, type, danger, isLoading }) => {
   return (
     <div>
       <button
-        type="button"
+        type={`${type}`}
         onClick={onClick}
         className={classNames(s.button, { [s.liststyle]: liststyle, [s.danger]: danger })}
       >
@@ -21,6 +22,7 @@ const Button = ({ name, onClick, liststyle, danger, isLoading }) => {
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   isLoading: PropTypes.bool,
   liststyle: PropTypes.bool,

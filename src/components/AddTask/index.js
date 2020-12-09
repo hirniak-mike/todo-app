@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -16,7 +17,8 @@ const AddTask = ({ id }) => {
     setValueTasks('');
   };
 
-  const onAddTasks = () => {
+  const onAddTasks = (e) => {
+    e.preventDefault();
     if (!valueTasks) {
       // eslint-disable-next-line no-alert
       alert('Enter task');
@@ -57,25 +59,26 @@ const AddTask = ({ id }) => {
           </button>
         </div>
       ) : (
-        <div className={s.addtask_form}>
+        <form className={s.addtask_form}>
           <Input
             placeholder="Enter task"
             inputValue={valueTasks}
             setValue={setValueTasks}
             taskstyle
+            autoFocus
           />
           <div className={s.addtask_form_wrapper}>
-            <Button name="Add" onClick={onAddTasks} />
-            <Button name="Cancel" onClick={toogleFormVisible} danger />
+            <Button name="Add" onClick={onAddTasks} type="submit" />
+            <Button name="Cancel" onClick={toogleFormVisible} type="button" danger />
           </div>
-        </div>
+        </form>
       )}
     </div>
   );
 };
 
 AddTask.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.number,
 };
 
 export default AddTask;

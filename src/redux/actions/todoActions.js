@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { BASE_SERVER_API, BASE_SERVER_TODO } from '../../res/api/BasicApi';
+import { BASE_SERVER_API, BASE_SERVER_TODO } from '../../res/const/api_const';
 
 export const setTodoItems = (items) => ({
   type: 'SET_TODO_ITEMS',
@@ -43,5 +43,22 @@ export const deleteTodo = (id, index) => {
     axios.delete(`${BASE_SERVER_TODO}/${id}`).then(() => {
       dispatch(deleteTodoSuccess(index));
     });
+  };
+};
+
+const editTodoSuccess = (items) => ({
+  type: 'EDIT_TODO_SUCCESS',
+  payload: items,
+});
+
+export const editTodo = (newTitle, id) => {
+  return (dispatch) => {
+    axios
+      .patch(`${BASE_SERVER_TODO}/${id}`, {
+        title: newTitle,
+      })
+      .then(() => {
+        dispatch(editTodoSuccess({ newTitle, id }));
+      });
   };
 };

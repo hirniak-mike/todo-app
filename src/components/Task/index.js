@@ -1,15 +1,29 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+
+import { editTask } from '../../redux/actions/tasksActions';
 
 import s from './index.module.scss';
 
 const Task = ({ text, itemId, listId, arrId, onClick, onCheckedTask, completed }) => {
+  const dispatch = useDispatch();
+
   const onChangeCheckbox = (event) => {
     onCheckedTask(itemId, arrId, event.target.checked, listId);
   };
+
+  const onEditTask = () => {
+    // eslint-disable-next-line no-alert
+    const newText = window.prompt('Enter task', text);
+    if (newText) {
+      dispatch(editTask(newText, itemId, listId, arrId));
+    }
+  };
+
   return (
     <div className={s.task}>
       <div className={s.checkbox}>
@@ -39,7 +53,7 @@ const Task = ({ text, itemId, listId, arrId, onClick, onCheckedTask, completed }
         <p>{text}</p>
       </div>
       <div className={s.task_edit}>
-        {/* <span> Will be in another version soon
+        <span onClick={() => onEditTask()}>
           <svg
             width="14"
             height="14"
@@ -52,7 +66,7 @@ const Task = ({ text, itemId, listId, arrId, onClick, onCheckedTask, completed }
               fill="#32363f"
             />
           </svg>
-        </span> */}
+        </span>
         <span onClick={() => onClick(itemId, arrId, listId)}>
           <svg
             width="14"

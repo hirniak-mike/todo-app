@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route } from 'react-router-dom';

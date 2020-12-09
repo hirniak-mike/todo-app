@@ -61,4 +61,5 @@
 
 input:checked + label + p {
   text-decoration: line-through;
+  opacity: 0.5;
 }

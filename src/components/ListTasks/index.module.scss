@@ -1,4 +1,5 @@
 .listtasks {
+  max-height: calc(100vh - 100px);
   border-right: 2px solid #62dafc;
   width: 300px;
   padding: 20px 20px;
@@ -11,7 +12,7 @@
 
   ul {
     overflow: auto;
-    max-height: 450px;
+    max-height: calc(100vh - 300px);
     li {
       margin-bottom: 8px;
       transition: background-color 0.1s ease-in-out;
@@ -38,6 +39,7 @@
           path {
             transition: fill 0.1s ease-in-out;
             fill: #20232a;
+            opacity: 1;
           }
         }
       }

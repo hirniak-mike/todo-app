@@ -23,6 +23,11 @@
     {
       "id": 5,
       "title": "Other"
+    },
+    {
+      "title": "test",
+      "tasks": [],
+      "id": 6
     }
   ],
   "tasks": [
@@ -33,58 +38,40 @@
       "id": 24
     },
     {
-      "text": "Learn React",
-      "todoId": 0,
-      "completed": false,
-      "id": 25
-    },
-    {
       "text": "ddddd",
       "todoId": 4,
-      "completed": false,
+      "completed": true,
       "id": 28
     },
     {
       "text": "Play FIFA",
       "todoId": 3,
-      "completed": true,
+      "completed": false,
       "id": 30
     },
     {
-      "text": "fdgvfdzx",
-      "todoId": 7,
-      "completed": true,
-      "id": 31
-    },
-    {
-      "text": "dfdssd",
-      "todoId": 7,
-      "completed": true,
-      "id": 32
-    },
-    {
-      "text": "fdsfddsfgsd",
-      "todoId": 8,
-      "completed": true,
-      "id": 33
-    },
-    {
-      "text": "gdsgdf",
-      "todoId": 9,
-      "completed": false,
-      "id": 34
-    },
-    {
-      "text": "fsdsfds",
-      "todoId": 10,
+      "text": "Other",
+      "todoId": 5,
       "completed": true,
       "id": 35
     },
     {
-      "text": "авіапмвіа",
-      "todoId": 6,
-      "completed": true,
+      "text": "Tenet",
+      "todoId": 1,
+      "completed": false,
       "id": 36
+    },
+    {
+      "text": "Idiocraty",
+      "todoId": 1,
+      "completed": true,
+      "id": 37
+    },
+    {
+      "text": "Borat",
+      "todoId": 1,
+      "completed": true,
+      "id": 38
     }
   ]
 }
