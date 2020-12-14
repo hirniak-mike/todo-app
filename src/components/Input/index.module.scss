@@ -25,3 +25,63 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .input {
+    input {
+      width: 150px;
+      &.liststyle {
+        font-size: 14px;
+      }
+      &.taskstyle {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .input {
+    input {
+      width: 150px;
+      padding: 5px 10px;
+      &.taskstyle {
+        width: 170px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .input {
+    input {
+      width: 120px;
+      padding: 4px 10px;
+      font-size: 12px;
+      &.liststyle {
+        font-size: 12px;
+      }
+      &.taskstyle {
+        width: 150px;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .input {
+    input {
+      width: 100px;
+      padding: 2px 10px;
+      font-size: 10px;
+      &.liststyle {
+        font-size: 11px;
+      }
+      &.taskstyle {
+        width: 130px;
+        font-size: 11px;
+      }
+    }
+  }
+}

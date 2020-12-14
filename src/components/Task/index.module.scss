@@ -1,20 +1,13 @@
 .task {
-  margin-bottom: 10px;
-  padding-right: 20px;
+  padding: 0 50px;
+  margin-bottom: 5px;
   display: flex;
   justify-content: space-between;
-
-  p {
-    font-size: 20px;
-    margin-left: 15px;
-  }
   &_edit {
-    span:last-child {
-      margin-left: 20px;
-    }
     span {
+      margin-left: 20px;
       position: relative;
-      bottom: 5px;
+      bottom: 8px;
       cursor: pointer;
       &:hover {
         path {
@@ -28,12 +21,16 @@
 
 .checkbox {
   display: flex;
-  align-items: center;
   input {
     display: none;
   }
+  p {
+    font-size: 20px;
+    margin-left: 15px;
+    text-align: justify;
+  }
   label {
-    width: 25px;
+    min-width: 25px;
     height: 25px;
     display: flex;
     align-items: center;
@@ -51,6 +48,7 @@
       }
     }
   }
+
   input:checked + label {
     background: #62dafc;
     svg {
@@ -62,4 +60,119 @@
 input:checked + label + p {
   text-decoration: line-through;
   opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+  .task {
+    padding: 0 15px;
+    margin-bottom: 5px;
+    &_edit {
+      span {
+        margin-left: 12px;
+        bottom: 10px;
+        svg {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+  .checkbox {
+    p {
+      font-size: 16px;
+      margin-left: 12px;
+    }
+    label {
+      min-width: 20px;
+      height: 20px;
+      svg {
+        width: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .task {
+    padding: 0 10px;
+    &_edit {
+      span {
+        margin-left: 10px;
+        bottom: 6px;
+        svg {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+  .checkbox {
+    p {
+      font-size: 14px;
+      margin-left: 10px;
+    }
+    label {
+      min-width: 20px;
+      height: 20px;
+      svg {
+        width: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .task {
+    &_edit {
+      span {
+        margin-left: 8px;
+        bottom: 4px;
+        svg {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
+  .checkbox {
+    p {
+      font-size: 12px;
+      margin-left: 8px;
+    }
+    label {
+      min-width: 16px;
+      height: 16px;
+      svg {
+        width: 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .task {
+    &_edit {
+      span {
+        margin-left: 6px;
+        bottom: 4px;
+        svg {
+          width: 8px;
+          height: 8px;
+        }
+      }
+    }
+  }
+  .checkbox {
+    p {
+      font-size: 10px;
+      margin-left: 6px;
+    }
+    label {
+      min-width: 14px;
+      height: 14px;
+      svg {
+        width: 6px;
+      }
+    }
+  }
 }

@@ -27,3 +27,51 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .button {
+    font-size: 12px;
+    padding: 6px 8px;
+    &.liststyle {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    &.danger {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .button {
+    font-size: 10px;
+    padding: 6px 8px;
+    width: 80px;
+    &.liststyle {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .button {
+    font-size: 10px;
+    padding: 4px 6px;
+    width: 70px;
+    &.liststyle {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .button {
+    font-size: 10px;
+    padding: 2px 4px;
+    width: 60px;
+    &.liststyle {
+      margin-top: 5px;
+      font-size: 10px;
+    }
+  }
+}

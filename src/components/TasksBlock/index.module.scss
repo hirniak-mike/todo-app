@@ -3,5 +3,34 @@
     padding: 15px 60px;
     flex: 1;
     overflow: auto;
-    max-height: calc(100vh - 130px);
+    margin: 2px 5px 0 0;
+    max-height: calc(100vh - 90px);
   }
+
+@media (max-width: 1024px) {
+  .tasks {
+    font-size: 26px;
+    padding: 5px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tasks {
+    font-size: 22px;
+    padding: 5px 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .tasks {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .tasks {
+    font-size: 16px;
+    padding: 0 5px;
+  }
+}

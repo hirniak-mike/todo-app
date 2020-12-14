@@ -1,20 +1,57 @@
 .title {
-    padding: 15px 50px;
-    border-bottom: 1px solid #62dafc;
-    span {
-      margin-left: 20px;
-      cursor: pointer;
-      &:hover {
-        path {
-          transition: fill 0.1s ease-in-out;
-          fill: #62dafc;
-        }
+  padding: 15px 50px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #62dafc;
+  display: flex;
+  justify-content: flex-start;
+  h1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  span {
+    margin-left: 20px;
+    cursor: pointer;
+    &:hover {
+      path {
+        transition: fill 0.1s ease-in-out;
+        fill: #62dafc;
       }
     }
+  }
 }
-.task {
-    padding: 10px 60px;
-    p {
-      text-align: center;
+
+@media (max-width: 1024px) {
+  .title {
+    padding: 10px 50px;
+    span {
+      margin-left: 10px;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    padding: 10px 38px;
+    span {
+      margin-left: 8px;
+      svg {
+        width: 13px;
+        height: 13px;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .title {
+    padding: 8px 33px;
+    span {
+      margin-left: 8px;
+      svg {
+        width: 11px;
+        height: 11px;
+      }
+    }
+  }
 }

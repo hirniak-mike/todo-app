@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/require-default-props */
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Input, Button } from '..';
@@ -28,8 +29,30 @@ const AddTask = ({ id }) => {
     setValueTasks('');
   };
 
+  const popupRef = useRef();
+  const inputRef = useRef();
+  const buttonRef = useRef();
+
+  const onClickOutside = (e) => {
+    if (
+      !isVisibleForm &&
+      !e.path.includes(popupRef.current) &&
+      !e.path.includes(inputRef.current) &&
+      !e.path.includes(buttonRef.current)
+    ) {
+      setIsVisibleForm(false);
+    }
+  };
+
+  useEffect(() => {
+    document.body.addEventListener('click', onClickOutside);
+    return function clear() {
+      document.body.removeEventListener('click', onClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={s.addtask}>
+    <div className={s.addtask} ref={popupRef}>
       {!isVisibleForm ? (
         <div className={s.addtask_open}>
           <button type="button" onClick={toogleFormVisible}>
@@ -64,12 +87,19 @@ const AddTask = ({ id }) => {
             placeholder="Enter task"
             inputValue={valueTasks}
             setValue={setValueTasks}
+            inputRef={inputRef}
             taskstyle
             autoFocus
           />
           <div className={s.addtask_form_wrapper}>
-            <Button name="Add" onClick={onAddTasks} type="submit" />
-            <Button name="Cancel" onClick={toogleFormVisible} type="button" danger />
+            <Button name="Add" onClick={onAddTasks} buttonRef={buttonRef} type="submit" />
+            <Button
+              name="Cancel"
+              onClick={toogleFormVisible}
+              buttonRef={buttonRef}
+              type="button"
+              danger
+            />
           </div>
         </form>
       )}

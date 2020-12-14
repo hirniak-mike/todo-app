@@ -26,3 +26,50 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .addtask {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .addtask {
+    &_open {
+      button {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .addtask {
+    &_open {
+      button {
+        font-size: 14px;
+        svg {
+          margin-right: 6px;
+          width: 11px;
+          height: 11px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .addtask {
+    &_open {
+      button {
+        font-size: 11px;
+        svg {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
+}
+
+

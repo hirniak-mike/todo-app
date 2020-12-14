@@ -26,7 +26,7 @@ const Task = ({ text, itemId, listId, arrId, onClick, onCheckedTask, completed }
 
   return (
     <div className={s.task}>
-      <div className={s.checkbox}>
+      <span className={s.checkbox}>
         <input
           id={`task-${itemId}`}
           type="checkbox"
@@ -51,7 +51,7 @@ const Task = ({ text, itemId, listId, arrId, onClick, onCheckedTask, completed }
           </svg>
         </label>
         <p>{text}</p>
-      </div>
+      </span>
       <div className={s.task_edit}>
         <span onClick={() => onEditTask()}>
           <svg

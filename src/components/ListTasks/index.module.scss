@@ -1,24 +1,22 @@
 .listtasks {
-  max-height: calc(100vh - 100px);
   border-right: 2px solid #62dafc;
   width: 300px;
-  padding: 20px 20px;
+  padding: 15px 8px 15px 15px;
   font-size: 18px;
 
   &_add {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 40px;
   }
 
   ul {
     overflow: auto;
-    max-height: calc(100vh - 300px);
+    max-height: calc(100vh - 240px);
     li {
       margin-bottom: 8px;
       transition: background-color 0.1s ease-in-out;
       border-radius: 10px;
-      width: 95%;
-      overflow: hidden;
+      width: 97%;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -28,8 +26,11 @@
       }
       a {
         display: block;
-        width: 100%;
         padding: 7px 10px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 90%;
+        white-space: nowrap;
       }
       span {
         position: relative;
@@ -47,6 +48,93 @@
       &:hover {
         background: #62dafc;
         color: #20232a;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .listtasks {
+    width: 250px;
+    font-size: 16px;
+    &_add {
+      margin-top: 30px;
+    }
+
+    ul {
+      li {
+        margin-bottom: 5px;
+        span {
+          svg {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .listtasks {
+    width: 200px;
+    font-size: 14px;
+
+    ul {
+      li {
+        margin-bottom: 5px;
+        a {
+          padding: 5px 10px;
+        }
+        span {
+          top: 6px;
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .listtasks {
+    width: 150px;
+    font-size: 12px;
+    padding: 10px 5px 10px 10px;
+    ul {
+      li {
+        margin-bottom: 3px;
+        a {
+          padding: 4px 8px;
+        }
+        span {
+          top: 5px;
+          svg {
+            width: 13px;
+            height: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .listtasks {
+    width: 120px;
+    font-size: 10px;
+    padding: 5px 3px 5px 5px;
+    ul {
+      li {
+        margin-bottom: 2px;
+        a {
+          padding: 4px 6px;
+        }
+        span {
+          top: 4px;
+        }
       }
     }
   }

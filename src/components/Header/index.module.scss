@@ -3,6 +3,7 @@
   border-bottom: 2px solid #62dafc;
   display: flex;
   justify-content: flex-start;
+  position: relative;
   &_title {
     font-size: 26px;
     font-family: 'Fredoka One', cursive;
@@ -11,6 +12,114 @@
     transition: color 0.1s ease-in-out;
     &:hover {
       color: darken( #62dafc, 20%);
+    }
+  }
+  &_search {
+    position: absolute;
+    top: 50px;
+    left: 302px;
+    background:  #62dafc;
+    border: 3px solid #62dafc;
+    color: #20232a;
+    border-radius: 10px;
+    padding: 3px;
+    width: 200px;
+    font-size: 14px;
+    max-height: 150px;
+    overflow: auto;
+    z-index: 99;
+    ul {
+      text-align: center;
+    }
+    li {
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.07s ease-in-out;
+      display: inline-block;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 170px;
+      white-space: nowrap;
+      padding: 1px 10px;
+    }
+    li:hover {
+      background:  #20232a;
+      color: #62dafc;
+    }
+    li:not(:last-child) {
+      margin-bottom: 2px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    &_title {
+      font-size: 24px;
+      margin-right: 80px;
+    }
+    &_search {
+      left: 253px;
+      width: 150px;
+      font-size: 13px;
+      max-height: 140px;
+      li {
+        border-radius: 10px;
+        width: 120px;
+        padding: 1px 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 50px;
+    &_title {
+      font-size: 22px;
+      margin-right: 50px;
+    }
+    &_search {
+      left: 204px;
+      top: 40px;
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    padding: 8px 25px;
+    &_title {
+      font-size: 20px;
+      margin-right: 50px;
+    }
+    &_search {
+      width: 120px;
+      left: 168px;
+      top: 35px;
+      li {
+        width: 100px;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .header {
+    padding: 5px 25px;
+    &_title {
+      font-size: 16px;
+      margin-right: 30px;
+    }
+    &_search {
+      width: 100px;
+      left: 130px;
+      top: 28px;
+      font-size: 10px;
+      li {
+        width: 80px;
+      }
     }
   }
 }

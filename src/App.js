@@ -22,8 +22,8 @@ function App() {
       <Header />
       <div className="app_wrapper">
         <Route exact path={`${HOME}`} component={() => <ListTasks />} />
-        <Route exact path={`${HOME}`} component={() => <TasksBlock />} />
         <Route exact path={`${TASK_ID}`} component={() => <ListTasks />} />
+        <Route exact path={`${HOME}`} component={() => <TasksBlock />} />
         <Route exact path={`${TASK_ID}`} component={() => <TasksBlock />} />
       </div>
     </div>

@@ -29,7 +29,6 @@ const TasksBlock = () => {
   const { id } = useParams();
   return (
     <div className={s.tasks}>
-      {/* tasksList[+id] === undefinded */}
       {id === undefined
         ? tasksList.map((list) => (
             <TasksUnit
@@ -41,13 +40,13 @@ const TasksBlock = () => {
               onCheckedTask={onCheckedTask}
             />
           ))
-        : [tasksList?.find((list) => list.id === +id)].map((item) => (
+        : tasksList.length &&
+          [tasksList.find((list) => list.id === +id)].map((item) => (
             <TasksUnit
-              // error "Each child in a list should have a enique "key" prop"
-              key={item?.id}
-              title={item?.title}
-              tasks={item?.tasks}
-              id={item?.id}
+              key={item.id}
+              title={item.title}
+              tasks={item.tasks}
+              id={item.id}
               onRemoveTask={onRemoveTask}
               onCheckedTask={onCheckedTask}
             />

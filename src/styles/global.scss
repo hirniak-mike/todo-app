@@ -1,21 +1,12 @@
 .app {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: calc(100vw - 25px);
-  height: calc(100vh - 35px);
-  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: #62dafc;
-  border: 5px solid #20232a;
-  box-shadow: 1px 2px 20px #20232a;
-  border-radius: 10px;
   background: #20232a;
   display: flex;
   flex-direction: column;
-  scrollbar-color: #458245 #714826;
-  scrollbar-width: 5px;
   ::-webkit-scrollbar-thumb {
     background: #62dafc;
     border-radius: 15px;
@@ -24,12 +15,31 @@
     background-color: #20232a;
   }
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 3px;
   }
 
   &_wrapper {
     display: flex;
     flex: 1;
-    max-height: calc(100vh - 100px);
+  }
+
+  .wrapper_loader {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    .loader {
+      border: 8px solid  #20232a;
+      border-top: 8px solid #62dafc;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   }
 }
+

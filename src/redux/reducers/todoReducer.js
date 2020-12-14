@@ -3,6 +3,7 @@ import produce from 'immer';
 
 const initialState = {
   items: [],
+  isLoadedTodo: false,
 };
 
 const todoItems = (state = initialState, action) => {
@@ -10,6 +11,7 @@ const todoItems = (state = initialState, action) => {
     case 'SET_TODO_ITEMS':
       return produce(state, (draftState) => {
         draftState.items = action.payload;
+        draftState.isLoadedTodo = true;
       });
 
     case 'ADD_TODO_SUCCESS':
